@@ -1,0 +1,15 @@
+---
+version: '3.8'
+services:
+  mydb:
+    image: mysql:5
+    environment:
+      MYSQL_ROOT_PASSWORD: abhi
+    container_name: mydb
+  mywordpress:
+    image: wordpress
+    ports: 
+      - 8888:80
+    container_name: mywordpress
+    links:
+      - mydb:mysql
