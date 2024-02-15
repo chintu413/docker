@@ -1,0 +1,4 @@
+FROM ubuntu
+MAINTAINER abhi
+COPY install-docker.sh /
+RUN apt-get update && sh install-docker.sh
