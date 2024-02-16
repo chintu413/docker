@@ -1,0 +1,17 @@
+---
+version: '3.8'
+services:
+  myadminer:
+    image: adminer
+    ports:
+      - 8888:8080
+  mydb:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: abhi
+      POSTGRES_USER: myuser
+      POSTGRES_DB: mydb
+networks:
+  default:
+    external:
+      name: first
